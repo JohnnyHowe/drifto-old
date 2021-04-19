@@ -5,7 +5,7 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     public bool accelerating = true;
-    public float accelerationForce = 1;     // nm
+    public float driveForce = 1;     // n
     public float maxSpeed = 10;             // m/s
     public float maxAngularVelocity = 30;    // degrees per second
     public float screenUse = 0.8f;  // How much of the screen to use for turning? max turn is when touch at screenUse of screen width
@@ -20,7 +20,7 @@ public class Car : MonoBehaviour
     {
         // Speed
         if (accelerating) {
-            _rb.AddForce(_rb.transform.forward.normalized * accelerationForce) ;
+            _rb.AddForce(_rb.transform.forward.normalized * driveForce) ;
         }
         _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, maxSpeed);
 
