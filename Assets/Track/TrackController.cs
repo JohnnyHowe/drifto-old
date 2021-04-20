@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class TrackController : MonoBehaviour
 {
-    [SerializeField] GameObject[] trackSections;
+    [SerializeField] GameObject[] leftTrackSections;
+    [SerializeField] GameObject[] rightTrackSections;
+    [SerializeField] GameObject[] straightSections;
     [SerializeField] TrackSection startSection;
 
+    public float straightSectionChance = 0.5f;
     public int forwardBufferSections = 1;
     public int rearBufferSections = 1;
     public int currentSection = 0;
     private int currentGeneratedSections = 0;
+    private int lastTurn = -1;  // -1 = left, 1 = right
     TrackSection lastSection;
 
-    void Start() {
+    void Start()
+    {
         lastSection = startSection;
     }
 
@@ -21,19 +26,22 @@ public class TrackController : MonoBehaviour
     void Update()
     {
         int i = 0;
-        while (currentGeneratedSections < currentSection + forwardBufferSections) {
+        while (currentGeneratedSections < currentSection + forwardBufferSections)
+        {
             CreateNewSection();
             currentGeneratedSections += 1;
             lastSection.number = currentGeneratedSections;
 
-            if (currentGeneratedSections > forwardBufferSections + rearBufferSections) {
+            if (currentGeneratedSections > forwardBufferSections + rearBufferSections)
+            {
                 Destroy(transform.GetChild(i).gameObject);
-                i ++;
+                i++;
             }
         }
     }
 
-    void CreateNewSection() {
+    void CreateNewSection()
+    {
         GameObject newTrack = Instantiate(ChooseSection(), transform);
         TrackSection newSection = newTrack.GetComponent<TrackSection>();
 
@@ -46,12 +54,34 @@ public class TrackController : MonoBehaviour
         lastSection = newSection;
     }
 
-    GameObject ChooseSection() {
-        float i = Random.Range(0, trackSections.Length);
-        int index = 0;
-        if (i != trackSections.Length) {
-            index = Mathf.FloorToInt(i);
+    GameObject ChooseSection()
+    {
+        GameObject chosenSection;
+        if (Random.Range(0, 99) / 99.0 < straightSectionChance)
+        {
+            chosenSection = RandomChoice(straightSections);
         }
-        return trackSections[index];
+        else
+        {
+            if (lastTurn < 0)
+            {
+                // last was left
+                chosenSection = RandomChoice(rightTrackSections);
+            }
+            else
+            {
+                // last was right
+                chosenSection = RandomChoice(leftTrackSections);
+            }
+            lastTurn *= -1;
+        }
+        return chosenSection;
+    }
+
+    GameObject RandomChoice(GameObject[] objects)
+    {
+        float i = Random.Range(0, objects.Length);
+        int index = i == objects.Length ? 0 : (int)i;
+        return objects[index];
     }
 }

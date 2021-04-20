@@ -513,11 +513,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3c4239adfffff4ea7e5003430f3da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackSections:
-  - {fileID: 361015407872255622, guid: 2dcb5627d4718724d98ff7a3988609d5, type: 3}
+  leftTrackSections:
   - {fileID: 1240586738760548837, guid: 5194c4038a5b3b646a1d179a06b25101, type: 3}
+  rightTrackSections:
   - {fileID: 1240586738760548837, guid: f8ba8a3c737cd0a439350583ad8e5718, type: 3}
+  straightSections:
+  - {fileID: 361015407872255622, guid: f56b578dc5cee204f8038ac2e276a4ef, type: 3}
+  - {fileID: 361015407872255622, guid: 2dcb5627d4718724d98ff7a3988609d5, type: 3}
   startSection: {fileID: 5691845896087784740}
+  straightSectionChance: 0.5
   forwardBufferSections: 3
   rearBufferSections: 1
   currentSection: 0
@@ -543,6 +547,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: maxAngularVelocity
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: m_RootOrder
