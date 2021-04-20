@@ -7,21 +7,30 @@ public class TrackController : MonoBehaviour
     [SerializeField] GameObject[] trackSections;
     [SerializeField] TrackSection startSection;
 
-    public int generateSections = 10;
-
+    public int forwardBufferSections = 1;
+    public int rearBufferSections = 1;
+    public int currentSection = 0;
+    private int currentGeneratedSections = 0;
     TrackSection lastSection;
-    void Start()
-    {
+
+    void Start() {
         lastSection = startSection;
-        for (int i = 0; i < generateSections; i ++) {
-            CreateNewSection();
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        int i = 0;
+        while (currentGeneratedSections < currentSection + forwardBufferSections) {
+            CreateNewSection();
+            currentGeneratedSections += 1;
+            lastSection.number = currentGeneratedSections;
+
+            if (currentGeneratedSections > forwardBufferSections + rearBufferSections) {
+                Destroy(transform.GetChild(i).gameObject);
+                i ++;
+            }
+        }
     }
 
     void CreateNewSection() {

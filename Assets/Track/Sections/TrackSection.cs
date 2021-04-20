@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrackSection : MonoBehaviour
 {
+    public int number;
     public Transform startPosition;
     public Transform endPosition;
 

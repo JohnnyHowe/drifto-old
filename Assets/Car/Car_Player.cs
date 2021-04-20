@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Car : MonoBehaviour
+public class Car_Player : MonoBehaviour
 {
     public bool accelerating = true;
     public float driveForce = 1;     // n
@@ -14,7 +15,7 @@ public class Car : MonoBehaviour
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody>(); 
+        _rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -22,8 +23,9 @@ public class Car : MonoBehaviour
         _rb.centerOfMass = centerOfMass;
 
         // Speed
-        if (accelerating) {
-            _rb.AddForce(_rb.transform.forward.normalized * driveForce) ;
+        if (accelerating)
+        {
+            _rb.AddForce(_rb.transform.forward.normalized * driveForce);
         }
         _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, maxSpeed);
 
