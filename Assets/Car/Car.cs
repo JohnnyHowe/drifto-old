@@ -30,5 +30,6 @@ public class Car : MonoBehaviour
         // Steering
         float steering = Mathf.Clamp(TouchInput.centeredScreenPosition.x / screenUse, -1, 1);
         _rb.angularVelocity = -Vector3.up * steering * maxAngularVelocity * Mathf.PI / 180;
+        // _rb.angularVelocity = new Vector3(_rb.angularVelocity.x, -steering * maxAngularVelocity * Mathf.PI / 180, _rb.angularVelocity.z);
     }
 }

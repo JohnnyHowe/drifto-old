@@ -199,13 +199,13 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.48
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -496,9 +496,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackSections:
   - {fileID: 361015407872255622, guid: 2dcb5627d4718724d98ff7a3988609d5, type: 3}
-  - {fileID: 4210350880886458714, guid: 7b93645fae5dcb1418cb71ef25fa00b3, type: 3}
-  - {fileID: 4210350880886458714, guid: 7b6f1e6c1b8aaf3468fcd842e52f88e9, type: 3}
-  - {fileID: 361015407872255622, guid: f56b578dc5cee204f8038ac2e276a4ef, type: 3}
+  - {fileID: 1240586738760548837, guid: 5194c4038a5b3b646a1d179a06b25101, type: 3}
+  - {fileID: 1240586738760548837, guid: f8ba8a3c737cd0a439350583ad8e5718, type: 3}
   startSection: {fileID: 5691845896087784740}
   generateSections: 20
 --- !u!4 &2073561435
