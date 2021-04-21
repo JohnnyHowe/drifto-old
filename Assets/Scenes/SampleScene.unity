@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackController: {fileID: 2073561434}
---- !u!4 &268907260 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5441285344362462606, guid: f15b3a727422cb54fb704aa1e97d4f05,
+--- !u!54 &102049929 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5441285345956367139, guid: f15b3a727422cb54fb704aa1e97d4f05,
     type: 3}
   m_PrefabInstance: {fileID: 5441285344630951794}
   m_PrefabAsset: {fileID: 0}
@@ -292,7 +292,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -365,25 +364,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
---- !u!114 &963194230
+--- !u!1 &1168436582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5441285344362462601, guid: f15b3a727422cb54fb704aa1e97d4f05,
+    type: 3}
+  m_PrefabInstance: {fileID: 5441285344630951794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1168436583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
+  m_GameObject: {fileID: 1168436582}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cbf531930b9ea04bb2e9eead94ce607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 268907260}
-  distance: 8
-  height: 5
+  distance: 6
+  height: 4
   damping: 5
   smoothRotation: 1
   followBehind: 1
   rotationDamping: 10
+  fovVelocityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 60
+      inSlope: 1.5187162
+      outSlope: 1.5187162
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.1273526
+    - serializedVersion: 3
+      time: 29.517708
+      value: 84.762184
+      inSlope: 0.4111987
+      outSlope: 0.4111987
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.113243535
+    - serializedVersion: 3
+      time: 99.15869
+      value: 99.93184
+      inSlope: -0.01783312
+      outSlope: -0.01783312
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10621875
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  carRigidbody: {fileID: 102049929}
 --- !u!1 &1314657966
 GameObject:
   m_ObjectHideFlags: 0
