@@ -240,8 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accelerating: 1
   driveForce: 15
-  maxSpeed: 20
-  maxAngularVelocity: 90
+  maxSpeed: 25
+  maxAngularVelocity: 100
   screenUse: 0.7
   centerOfMass: {x: 0, y: 0, z: 0}
 --- !u!65 &6616566663452786811

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Car_Player : MonoBehaviour
+public class Car_PlayerMovement : MonoBehaviour
 {
     public bool accelerating = true;
     public float driveForce = 1;     // n
