@@ -14,7 +14,7 @@ public class TrackController : MonoBehaviour
     public int rearBufferSections = 1;
     public int currentSection = 0;
     private int currentGeneratedSections = 0;
-    private int lastTurn = -1;  // -1 = left, 1 = right
+    public int lastTurn = -1;  // -1 = left, 1 = right
     TrackSection lastSection;
 
     void Start()
