@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 5441285345956367138}
   - component: {fileID: 6616566663452786811}
   - component: {fileID: -4198353330764299809}
+  - component: {fileID: 3970783295501343004}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -161,6 +162,7 @@ Transform:
   - {fileID: 4899358351372186830}
   - {fileID: 6914827689195264963}
   - {fileID: 2111352596}
+  - {fileID: 778138167476109764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -244,7 +246,7 @@ MonoBehaviour:
   maxSpeed: 25
   maxAngularVelocity: 100
   screenUse: 0.7
-  centerOfMass: {x: 0, y: 0, z: 0}
+  centerOfMass: {fileID: 0}
 --- !u!65 &6616566663452786811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254,7 +256,7 @@ BoxCollider:
   m_GameObject: {fileID: 5441285345956367165}
   m_Material: {fileID: 13400000, guid: 10bec7975e287f6438258fc266d4b5b8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.71653336, z: 1}
   m_Center: {x: 0, y: 0.14173333, z: 0}
@@ -265,7 +267,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5441285345956367165}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2594b9957b1d58241ac7ea2a6d2677d3, type: 3}
   m_Name: 
@@ -274,8 +276,23 @@ MonoBehaviour:
   FRWheel: {fileID: 1197134355382552743}
   BLWheel: {fileID: 4899358351372186830}
   BRWheel: {fileID: 6914827689195264963}
-  wheelRadius: 0.3
   maxDistance: 0.5
+  minDistance: -0.5
+  springConstant: 1
+  dampingConstant: 0.1
+--- !u!114 &3970783295501343004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441285345956367165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8069b943ddc7f174e9fb65c57dd94d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackController: {fileID: 0}
 --- !u!1 &6330205253232050137
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +378,50 @@ SpringJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &7116809235705542787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778138167476109764}
+  - component: {fileID: 3761676665233102119}
+  m_Layer: 0
+  m_Name: TrackTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &778138167476109764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116809235705542787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5441285345956367143}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3761676665233102119
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116809235705542787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7240451276734173142
 GameObject:
   m_ObjectHideFlags: 0

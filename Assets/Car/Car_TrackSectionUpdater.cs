@@ -9,11 +9,11 @@ public class Car_TrackSectionUpdater : MonoBehaviour
 {
     public TrackController trackController;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.transform.parent.gameObject.tag == "Road")
+        if (other.gameObject.transform.parent.gameObject.tag == "Road")
         {
-            trackController.currentSection = collision.gameObject.transform.parent.gameObject.GetComponent<TrackSection>().number;
+            trackController.currentSection = other.gameObject.transform.parent.gameObject.GetComponent<TrackSection>().number;
         }
     }
 }

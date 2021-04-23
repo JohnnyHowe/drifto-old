@@ -40,7 +40,6 @@ public class Car_Suspension : MonoBehaviour
     void ApplyWheelSupport(Transform wheel, float lastDistance) {
         Vector3 supportForce = GetWheelSupportForce(wheel, lastDistance);
         _rb.AddForceAtPosition(supportForce, wheel.position);
-        Debug.DrawRay(wheel.position, supportForce, Color.yellow);
     }
 
     Vector3 GetWheelSupportForce(Transform wheel, float lastDistance) {
