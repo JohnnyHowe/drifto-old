@@ -10,7 +10,7 @@ public class Car_PlayerMovement : MonoBehaviour
     public float maxSpeed = 10;             // m/s
     public float maxAngularVelocity = 30;    // degrees per second
     public float screenUse = 0.8f;  // How much of the screen to use for turning? max turn is when touch at screenUse of screen width
-    public Vector3 centerOfMass;
+    public Transform centerOfMass;
     private Rigidbody _rb;
 
     void Start()
@@ -20,7 +20,7 @@ public class Car_PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rb.centerOfMass = centerOfMass;
+        _rb.centerOfMass = centerOfMass.localPosition;
 
         // Speed
         if (accelerating)
