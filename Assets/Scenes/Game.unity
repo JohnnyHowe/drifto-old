@@ -573,7 +573,7 @@ MonoBehaviour:
   leftTrackSections:
   - {fileID: 1240586738760548837, guid: 5194c4038a5b3b646a1d179a06b25101, type: 3}
   rightTrackSections:
-  - {fileID: 1240586738760548837, guid: 59001eef11efc5e4fbec09c6438f2ccb, type: 3}
+  - {fileID: 4150784216508716712, guid: a71da23df575b214094de8fef6401da4, type: 3}
   straightSections:
   - {fileID: 361015407872255622, guid: f56b578dc5cee204f8038ac2e276a4ef, type: 3}
   - {fileID: 361015407872255622, guid: 2dcb5627d4718724d98ff7a3988609d5, type: 3}
