@@ -59,6 +59,6 @@ public class Car_Suspension : MonoBehaviour
     }
 
     Vector3 GetUpDir() {
-        return Vector3.up;
+        return transform.up;
     }
 }
