@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5441285344362462601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5441285345956367143}
@@ -206,11 +206,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5441285344362462601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cbf531930b9ea04bb2e9eead94ce607, type: 3}
+  m_Script: {fileID: 11500000, guid: 3013fed897e536e4fbd5e4c8ddb894d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 6
-  height: 4
+  distance: 4
+  height: 3
   damping: 5
   smoothRotation: 1
   followBehind: 1
@@ -219,36 +219,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 60
-      inSlope: 1.5187162
-      outSlope: 1.5187162
+      time: 0.6221825
+      value: 76.6774
+      inSlope: 0.024510354
+      outSlope: 0.024510354
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.1273526
+      outWeight: 0.07166206
     - serializedVersion: 3
-      time: 29.517708
-      value: 84.762184
-      inSlope: 0.4111987
-      outSlope: 0.4111987
+      time: 100.581764
+      value: 86.59281
+      inSlope: 0.2
+      outSlope: 0.2
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.113243535
-    - serializedVersion: 3
-      time: 99.15869
-      value: 99.93184
-      inSlope: -0.01783312
-      outSlope: -0.01783312
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.10621875
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   carRigidbody: {fileID: 5441285345956367139}
+  carAngleEffectOnFOV: 0.25
 --- !u!1 &5441285345956367165
 GameObject:
   m_ObjectHideFlags: 0
