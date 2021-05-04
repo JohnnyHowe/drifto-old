@@ -5449,6 +5449,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 675726695, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: trackController
+      value: 
+      objectReference: {fileID: 2073561434}
+    - target: {fileID: 2111352595, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2111352597, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
       propertyPath: m_Intensity
       value: 5
@@ -5527,6 +5535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116809235705542787, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565986635803816662, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}

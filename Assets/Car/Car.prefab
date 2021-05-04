@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2111352596
 Transform:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   carRigidbody: {fileID: 5441285345956367139}
-  carAngleEffectOnFOV: 0.25
+  carAngleEffectOnFOV: 0
 --- !u!1 &5441285345956367165
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +255,6 @@ GameObject:
   - component: {fileID: 5441285345956367139}
   - component: {fileID: 5441285345956367138}
   - component: {fileID: -4198353330764299809}
-  - component: {fileID: 3970783295501343004}
   - component: {fileID: 102049933}
   m_Layer: 0
   m_Name: Car
@@ -363,11 +362,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerating: 1
+  drag: 0.02
   driveForce: 20
-  maxSpeed: 25
   maxAngularVelocity: 90
-  screenUse: 0.7
   centerOfMass: {fileID: 1984340385}
+  screenUse: 0.7
 --- !u!114 &-4198353330764299809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,19 +387,6 @@ MonoBehaviour:
   minDistance: -2
   springConstant: 15
   dampingConstant: 3
---- !u!114 &3970783295501343004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5441285345956367165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8069b943ddc7f174e9fb65c57dd94d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackController: {fileID: 0}
 --- !u!114 &102049933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,13 +454,14 @@ GameObject:
   m_Component:
   - component: {fileID: 778138167476109764}
   - component: {fileID: 3761676665233102119}
+  - component: {fileID: 675726695}
   m_Layer: 0
   m_Name: TrackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &778138167476109764
 Transform:
   m_ObjectHideFlags: 0
@@ -502,6 +489,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &675726695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116809235705542787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8069b943ddc7f174e9fb65c57dd94d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackController: {fileID: 0}
 --- !u!1 &7240451276734173142
 GameObject:
   m_ObjectHideFlags: 0
