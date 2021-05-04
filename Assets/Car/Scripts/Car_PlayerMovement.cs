@@ -10,13 +10,15 @@ public class Car_PlayerMovement : MonoBehaviour
     public float screenUse = 0.8f;  // How much of the screen to use for turning? max turn is when touch at screenUse of screen width
     [Header("Body")]
     public Transform centerOfMass;
+    public Transform groundTrigger;
+    public LayerMask wheelCollidables;
     public float drag = 1f;
     [Header("Engine")]
     public float driveForce = 1;
     [Header("Suspension and Steering")]
     public float activeVisualSteeringAngleEffect = 1;
     public float maxVisualSteeringSpeed = 1;
-    public float maxAngularVelocity = 30;    // degrees per second
+    public float maxAngularAcceleration = 30;    // degrees per second
     public List<Transform> steeringWheels;
     public List<Transform> driveWheels;
     private Rigidbody _rb;
@@ -41,11 +43,15 @@ public class Car_PlayerMovement : MonoBehaviour
         _rb.centerOfMass = centerOfMass.localPosition;  // Doing each frame allows it to be changed in inspector
         _rb.AddForce(-GetDragForce() * _rb.velocity.normalized);
 
-        // Engine
-        _rb.AddForce(GetDriveDirection() * GetDriveForce());
+        // If rear wheels on ground
+        if (WheelsGrounded())
+        {
+            // Engine
+            _rb.AddForce(GetDriveDirection() * GetDriveForce());
 
-        // Steering
-        _rb.angularVelocity = -Vector3.up * GetSteeringAngularVelocity();
+            // Steering
+            _rb.angularVelocity += -transform.up * GetSteeringAngularAcceleration() * Time.fixedDeltaTime;
+        }
     }
 
     /// Point the drive wheels at angle
@@ -60,19 +66,20 @@ public class Car_PlayerMovement : MonoBehaviour
             float change = ((((targetAngle - currentAngle) % 360) + 540) % 360) - 180;
             float newAngle = currentAngle + change * Time.deltaTime * maxVisualSteeringSpeed;
             wheel.localEulerAngles = new Vector3(0, newAngle, 0);
-            // wheel.localEulerAngles = new Vector3(0, Mathf.Clamp(newAngle, -maxVisualSteeringAngle, maxVisualSteeringAngle), 0);
         }
     }
 
-    float nfmod(float a,float b)
-{
-    return a - b * Mathf.Floor(a / b);
-}
+    /// Are the drive wheels grounded
+    /// Can the car accelerate?
+    bool WheelsGrounded() {
+        // return driveTrigger.
+        return Physics.OverlapBox(groundTrigger.position, groundTrigger.localScale / 2, Quaternion.identity, wheelCollidables).Length > 0;
+    }
 
     /// How fast do we spin car?
-    float GetSteeringAngularVelocity()
+    float GetSteeringAngularAcceleration()
     {
-        return GetSteering() * maxAngularVelocity * Mathf.PI / 180;
+        return GetSteering() * maxAngularAcceleration * Mathf.PI / 180;
     }
 
     /// How much should we be turning?

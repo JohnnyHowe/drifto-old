@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 400608908}
   - component: {fileID: 400608907}
   - component: {fileID: 400608906}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400608904}
   m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -20, y: -6.5, z: 50}
+  m_LocalPosition: {x: 0, y: -6.5, z: 50}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 1370421630}
@@ -347,20 +347,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
-        type: 3}
-      propertyPath: throttle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
-        type: 3}
-      propertyPath: maxVisualSteeringSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: m_RootOrder
@@ -374,12 +360,12 @@ PrefabInstance:
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 14.781317
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.163854
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
@@ -619,7 +605,7 @@ GameObject:
   - component: {fileID: 1301818936}
   - component: {fileID: 1301818935}
   - component: {fileID: 1301818934}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
