@@ -525,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5441285344362462601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5441285345956367143}
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3013fed897e536e4fbd5e4c8ddb894d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 4
+  distance: 10
   height: 3
   damping: 5
   smoothRotation: 1
@@ -574,7 +574,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   carRigidbody: {fileID: 5441285345956367139}
-  carAngleEffectOnFOV: 0
+  carAngleEffectOnFOV: 0.1
 --- !u!1 &5441285345956367165
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 5441285345956367139}
   - component: {fileID: 5441285345956367138}
   - component: {fileID: 102049933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ MonoBehaviour:
   wheelCollidables:
     serializedVersion: 2
     m_Bits: 4096
-  drag: 0.02
+  drag: 0.016
   driveForce: 20
   activeVisualSteeringAngleEffect: 30
   maxVisualSteeringSpeed: 10
