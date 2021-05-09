@@ -34,7 +34,5 @@ public class Car_PlayerCamera : MonoBehaviour
         float angle = Vector3.Angle(carRigidbody.velocity.normalized, carRigidbody.transform.forward);
         float m = Mathf.Abs(Mathf.Pow(angle / 90, 2)) * Mathf.Sign(angle);
         float carAngleFOVChange = carAngleEffectOnFOV * m * 90;
-
-        Camera.main.fieldOfView = fovVelocityCurve.Evaluate(carRigidbody.velocity.magnitude) + carAngleFOVChange;
     }
 }

@@ -71,8 +71,7 @@ public class Car_PlayerMovement : MonoBehaviour
 
     /// Are the drive wheels grounded
     /// Can the car accelerate?
-    bool WheelsGrounded() {
-        // return driveTrigger.
+    public bool WheelsGrounded() {
         return Physics.OverlapBox(groundTrigger.position, groundTrigger.localScale / 2, Quaternion.identity, wheelCollidables).Length > 0;
     }
 

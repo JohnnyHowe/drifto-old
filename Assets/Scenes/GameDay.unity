@@ -233,7 +233,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -288,6 +288,50 @@ PrefabInstance:
       propertyPath: carAngleEffectOnFOV
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168436583, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: fovVelocityCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 2111352595, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -301,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: drag
       value: 0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: throttle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
@@ -320,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
@@ -366,6 +415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662251838791820293, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7116809235705542787, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}

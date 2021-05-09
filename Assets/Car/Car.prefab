@@ -574,7 +574,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   carRigidbody: {fileID: 5441285345956367139}
-  carAngleEffectOnFOV: 0.1
+  carAngleEffectOnFOV: 0
 --- !u!1 &5441285345956367165
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 5441285345956367139}
   - component: {fileID: 5441285345956367138}
   - component: {fileID: 102049933}
+  - component: {fileID: 6662251838791820293}
   m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
@@ -626,7 +627,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 10
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -688,6 +689,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   collisionSpeedTolerance: 5
+--- !u!114 &6662251838791820293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441285345956367165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5239e4c9d083db24c9cb13d412714eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 9.8
+  direction: {x: 0, y: -1, z: 0}
 --- !u!1 &7069548234387234986
 GameObject:
   m_ObjectHideFlags: 0
