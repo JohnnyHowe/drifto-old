@@ -29,6 +29,6 @@ public class Car_Death : MonoBehaviour
 
 
     public void RestartScene() {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
