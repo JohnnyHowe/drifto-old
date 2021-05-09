@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 102049933, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: collisionSpeedTolerance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 675726695, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
       propertyPath: trackController
       value: 
@@ -344,7 +348,7 @@ PrefabInstance:
     - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: drag
-      value: 0.014
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
@@ -369,7 +373,7 @@ PrefabInstance:
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.8
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
@@ -418,8 +422,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6662251838791820293, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
+      propertyPath: maxAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662251838791820293, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7116809235705542787, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
