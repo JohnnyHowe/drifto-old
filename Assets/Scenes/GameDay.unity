@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102049933, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
       propertyPath: collisionSpeedTolerance
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 675726695, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
       propertyPath: trackController

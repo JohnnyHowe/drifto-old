@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 10
-  height: 3
+  height: 4
   damping: 5
   smoothRotation: 1
   followBehind: 1
@@ -553,19 +553,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.6221825
-      value: 76.6774
-      inSlope: 0.024510354
-      outSlope: 0.024510354
+      time: 0
+      value: 60
+      inSlope: 0
+      outSlope: 0.2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.07166206
+      outWeight: 0
     - serializedVersion: 3
-      time: 100.581764
-      value: 86.59281
+      time: 100
+      value: 80
       inSlope: 0.2
-      outSlope: 0.2
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -574,7 +574,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   carRigidbody: {fileID: 5441285345956367139}
-  carAngleEffectOnFOV: 0
+  carAngleEffectOnFOV: 0.1
 --- !u!1 &5441285345956367165
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 10
+  m_AngularDrag: 36
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -655,7 +655,7 @@ MonoBehaviour:
   driveForce: 20
   activeVisualSteeringAngleEffect: 30
   maxVisualSteeringSpeed: 10
-  maxAngularAcceleration: 1000
+  maxAngularAcceleration: 10000
   steeringWheels:
   - {fileID: 2701940144851871860}
   - {fileID: 1545614305606353821}
@@ -703,6 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 9.8
   direction: {x: 0, y: -1, z: 0}
+  maxAngle: 30
 --- !u!1 &7069548234387234986
 GameObject:
   m_ObjectHideFlags: 0
