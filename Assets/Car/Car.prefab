@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &555585065804661066
 Transform:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411189786032452255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.57, z: 0}
+  m_LocalPosition: {x: 0, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2701940144851871860}
@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 5441285345956367138}
   - component: {fileID: 102049933}
   - component: {fileID: 6662251838791820293}
+  - component: {fileID: 1953734768213779901}
   m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
@@ -644,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab507a02edf5d649ab4893746ced315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throttle: 1
+  throttle: 0
   screenUse: 0.7
   centerOfMass: {fileID: 1984340385}
   groundTrigger: {fileID: 5737307986109079196}
@@ -703,7 +704,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 9.8
   direction: {x: 0, y: -1, z: 0}
-  maxAngle: 30
+  maxAngle: 0
+--- !u!114 &1953734768213779901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441285345956367165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e17f3c2da8e58e4db42fbb1fa528f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  FLWheel: {fileID: 2701940144851871860}
+  FRWheel: {fileID: 1545614305606353821}
+  BLWheel: {fileID: 3766214765671899276}
+  BRWheel: {fileID: 4111858211299780281}
+  maxDistance: 1
+  minDistance: -1
+  springConstant: 100
+  dampingConstant: 4
 --- !u!1 &7069548234387234986
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7116809235705542787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5441285345956367143}
@@ -826,7 +850,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5787127
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &675726695
 MonoBehaviour:
@@ -932,7 +956,7 @@ GameObject:
   - component: {fileID: 446598513731586025}
   - component: {fileID: 1262028044101508987}
   - component: {fileID: 4825073542839341674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
