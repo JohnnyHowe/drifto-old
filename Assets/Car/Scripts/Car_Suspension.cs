@@ -17,10 +17,12 @@ public class Car_Suspension : MonoBehaviour
     public float maxDistance = 0.5f;
     public float minDistance = -0.5f;
     public float springConstant = 1;
+    public float maxForce = 10;
     public float dampingConstant = 0.1f;
 
     Rigidbody _rb;
-    void Start() {
+    void Start()
+    {
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -38,28 +40,38 @@ public class Car_Suspension : MonoBehaviour
         BRLastDistance = GetWheelDistanceFromRest(BRWheel);
     }
 
-    void ApplyWheelSupport(Transform wheel, float lastDistance) {
+    void ApplyWheelSupport(Transform wheel, float lastDistance)
+    {
         Vector3 supportForce = GetWheelSupportForce(wheel, lastDistance);
         _rb.AddForceAtPosition(supportForce, wheel.position);
+        Debug.DrawRay(wheel.position, supportForce);
     }
 
-    Vector3 GetWheelSupportForce(Transform wheel, float lastDistance) {
+    Vector3 GetWheelSupportForce(Transform wheel, float lastDistance)
+    {
         float currentDistance = GetWheelDistanceFromRest(wheel);
         float dampingForce = ((currentDistance - lastDistance) / Time.fixedDeltaTime) * dampingConstant;
-        float magnitude = Mathf.Max(0, -currentDistance * springConstant - dampingForce);
+        float magnitude = Mathf.Min(Mathf.Max(0, -currentDistance * springConstant - dampingForce), maxForce);
         return magnitude * GetUpDir();
     }
 
-    float GetWheelDistanceFromRest(Transform wheel) {
+    float GetWheelDistanceFromRest(Transform wheel)
+    {
         RaycastHit hit;
         float rayLength = maxDistance - minDistance;
         Vector3 rayOrigin = wheel.position - GetUpDir() * minDistance;
         bool hasHit = Physics.Raycast(rayOrigin, -GetUpDir(), out hit, rayLength, roadLayer);
-        float distanceFromRest = hasHit? hit.distance + minDistance: 0;
+        float distanceFromRest = hasHit ? hit.distance + minDistance : 0;
+        if (hasHit)
+        {
+            wheel.GetChild(0).transform.position = hit.point;
+            wheel.GetChild(0).transform.localPosition += Vector3.up / 2;
+        }
         return distanceFromRest;
     }
 
-    Vector3 GetUpDir() {
+    Vector3 GetUpDir()
+    {
         return transform.up;
     }
 }
