@@ -239,7 +239,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 14135
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -340,6 +340,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2016869597889988861, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3761676665233102119, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: m_Enabled
@@ -348,12 +353,17 @@ PrefabInstance:
     - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: drag
-      value: 0.015
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: throttle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: driveForce
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
