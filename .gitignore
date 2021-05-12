@@ -37,4 +37,7 @@ sysinfo.txt
 *.unitypackage
 
 
-/Assets/Track/Models/Old Blends
+/Assets/Track/Models/Old/*
+*.meta
+*.blend1
+*.blend1.meta
