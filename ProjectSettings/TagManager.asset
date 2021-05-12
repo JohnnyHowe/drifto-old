@@ -18,9 +18,9 @@ TagManager:
   - Car
   - PostProcessing
   - Collidable
-  - 
-  - 
-  - 
+  - CameraOverlay
+  - Road
+  - Wheels
   - 
   - 
   - 
