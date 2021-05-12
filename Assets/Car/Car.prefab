@@ -402,7 +402,7 @@ Transform:
   m_GameObject: {fileID: 2733665878159129069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0, z: -1.324}
-  m_LocalScale: {x: 0.3, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.3, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6684581793709456394}
   m_Father: {fileID: 1147157278139145348}
@@ -433,7 +433,7 @@ Transform:
   m_GameObject: {fileID: 3244700702978038515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7, y: 0, z: 1.324}
-  m_LocalScale: {x: 0.3, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.3, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3966362910359500373}
   m_Father: {fileID: 1147157278139145348}
@@ -651,19 +651,19 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 60
+      value: 1
       inSlope: 0
-      outSlope: 0.2
-      tangentMode: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 100
-      value: 80
-      inSlope: 0.2
+      time: 1
+      value: 1
+      inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -671,7 +671,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   carRigidbody: {fileID: 5441285345956367139}
-  carAngleEffectOnFOV: 0.1
+  carAngleEffectOnFOV: 0.3
 --- !u!1 &5441285345956367165
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,15 +741,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab507a02edf5d649ab4893746ced315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throttle: 0
+  throttle: 1
   screenUse: 0.7
   centerOfMass: {fileID: 1984340385}
   groundTrigger: {fileID: 5737307986109079196}
   wheelCollidables:
     serializedVersion: 2
     m_Bits: 4096
-  drag: 0.016
-  driveForce: 20
+  drag: 0.015
+  driveForce: 12
   activeVisualSteeringAngleEffect: 30
   maxVisualSteeringSpeed: 10
   maxAngularAcceleration: 10000
@@ -785,7 +785,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  collisionSpeedTolerance: 5
+  collisionSpeedTolerance: 3
 --- !u!114 &6662251838791820293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 9.8
   direction: {x: 0, y: -1, z: 0}
-  maxAngle: 0
+  maxAngle: 30
 --- !u!114 &1953734768213779901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,9 +820,10 @@ MonoBehaviour:
   FRWheel: {fileID: 1545614305606353821}
   BLWheel: {fileID: 3766214765671899276}
   BRWheel: {fileID: 4111858211299780281}
-  maxDistance: 1
+  maxDistance: 0.5
   minDistance: -0.5
-  springConstant: 100
+  springConstant: 30
+  maxForce: 15
   dampingConstant: 10
 --- !u!1 &7069548234387234986
 GameObject:
@@ -849,7 +850,7 @@ Transform:
   m_GameObject: {fileID: 7069548234387234986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0, z: 1.324}
-  m_LocalScale: {x: 0.3, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.3, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7971666320583745006}
   m_Father: {fileID: 1147157278139145348}
@@ -866,7 +867,7 @@ GameObject:
   - component: {fileID: 778138167476109764}
   - component: {fileID: 3761676665233102119}
   - component: {fileID: 675726695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +939,7 @@ Transform:
   m_GameObject: {fileID: 7524727167435371605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7, y: 0, z: -1.324}
-  m_LocalScale: {x: 0.3, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.3, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6500563277391232804}
   m_Father: {fileID: 1147157278139145348}
