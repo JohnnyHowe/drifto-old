@@ -23,6 +23,7 @@ public class Car_PlayerMovement : MonoBehaviour
     public List<Transform> steeringWheels;
     public List<Transform> driveWheels;
     private Rigidbody _rb;
+    public float driftAngleThreshold = 10.0f;
 
     void Start()
     {
@@ -34,15 +35,20 @@ public class Car_PlayerMovement : MonoBehaviour
         // Point wheels
         float wheelAngle = -Vector3.Angle(_rb.velocity.normalized, GetDriveDirection()) * Vector3.Cross(_rb.velocity.normalized, GetDriveDirection()).y;
         wheelAngle = Mathf.Min(Mathf.Max(-maxVisualSteeringAngle, wheelAngle), maxVisualSteeringAngle);
-        // if (TouchInput.touched)
-        // {
-        //     wheelAngle = -GetSteering() * activeVisualSteeringAngleEffect;
-        // }
-        // else
-        // {
-        //     wheelAngle = -Vector3.Angle(_rb.velocity.normalized, GetDriveDirection()) * Vector3.Cross(_rb.velocity.normalized, GetDriveDirection()).y;
-        // }
         PointDriveWheelsAt(wheelAngle);
+    }
+
+    private float GetRawDriftAngle() {
+        if (! WheelsGrounded()) return 0;
+        return Vector3.Angle(_rb.velocity.normalized, GetDriveDirection()) * Vector3.Cross(_rb.velocity.normalized, GetDriveDirection()).y;
+    }
+
+    public float GetDriftAngle() {
+        return GetRawDriftAngle();
+    } 
+
+    public bool IsDrifting() {
+        return Mathf.Abs(GetDriftAngle()) > driftAngleThreshold;
     }
 
     void FixedUpdate()
