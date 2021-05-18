@@ -13,6 +13,8 @@ public class Car_Suspension : MonoBehaviour
     float BLLastDistance = 0;
     public Transform BRWheel;
     float BRLastDistance = 0;
+    public float verticalOffset = 0;
+    public float verticalWheelVisualOffset = 0;
 
     public float maxDistance = 0.5f;
     public float minDistance = -0.5f;
@@ -59,12 +61,12 @@ public class Car_Suspension : MonoBehaviour
     {
         RaycastHit hit;
         float rayLength = maxDistance - minDistance;
-        Vector3 rayOrigin = wheel.position - GetUpDir() * minDistance;
+        Vector3 rayOrigin = (wheel.position - GetUpDir() * verticalOffset) - GetUpDir() * minDistance;
         bool hasHit = Physics.Raycast(rayOrigin, -GetUpDir(), out hit, rayLength, roadLayer);
         float distanceFromRest = hasHit ? hit.distance + minDistance : 0;
         if (hasHit)
         {
-            wheel.GetChild(0).transform.position = hit.point;
+            wheel.GetChild(0).transform.position = hit.point + GetUpDir() * verticalWheelVisualOffset;
             wheel.GetChild(0).transform.localPosition += Vector3.up / 2;
         }
         return distanceFromRest;

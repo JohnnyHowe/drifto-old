@@ -18,6 +18,7 @@ public class Car_PlayerMovement : MonoBehaviour
     [Header("Suspension and Steering")]
     public float activeVisualSteeringAngleEffect = 1;
     public float maxVisualSteeringSpeed = 1;
+    public float maxVisualSteeringAngle = 30;
     public float maxAngularAcceleration = 30;    // degrees per second
     public List<Transform> steeringWheels;
     public List<Transform> driveWheels;
@@ -31,9 +32,16 @@ public class Car_PlayerMovement : MonoBehaviour
     void Update()
     {
         // Point wheels
-        float passiveAngle = -Vector3.Angle(_rb.velocity.normalized, GetDriveDirection()) * Vector3.Cross(_rb.velocity.normalized, GetDriveDirection()).y;
-        float activeAngle = -GetSteering() * activeVisualSteeringAngleEffect;
-        float wheelAngle = passiveAngle + activeAngle;
+        float wheelAngle = -Vector3.Angle(_rb.velocity.normalized, GetDriveDirection()) * Vector3.Cross(_rb.velocity.normalized, GetDriveDirection()).y;
+        wheelAngle = Mathf.Min(Mathf.Max(-maxVisualSteeringAngle, wheelAngle), maxVisualSteeringAngle);
+        // if (TouchInput.touched)
+        // {
+        //     wheelAngle = -GetSteering() * activeVisualSteeringAngleEffect;
+        // }
+        // else
+        // {
+        //     wheelAngle = -Vector3.Angle(_rb.velocity.normalized, GetDriveDirection()) * Vector3.Cross(_rb.velocity.normalized, GetDriveDirection()).y;
+        // }
         PointDriveWheelsAt(wheelAngle);
     }
 
@@ -71,7 +79,8 @@ public class Car_PlayerMovement : MonoBehaviour
 
     /// Are the drive wheels grounded
     /// Can the car accelerate?
-    public bool WheelsGrounded() {
+    public bool WheelsGrounded()
+    {
         return Physics.OverlapBox(groundTrigger.position, groundTrigger.localScale / 2, Quaternion.identity, wheelCollidables).Length > 0;
     }
 
