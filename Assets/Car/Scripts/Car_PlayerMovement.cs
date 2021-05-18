@@ -47,6 +47,10 @@ public class Car_PlayerMovement : MonoBehaviour
         return GetRawDriftAngle();
     } 
 
+    public bool IsFrontWheelDrift() {
+        return Mathf.Abs(GetDriftAngle()) > maxVisualSteeringAngle;
+    }
+
     public bool IsDrifting() {
         return Mathf.Abs(GetDriftAngle()) > driftAngleThreshold;
     }
