@@ -9,7 +9,6 @@ public class Car_SkidMarks : MonoBehaviour
     public ParticleSystem[] tyreSmoke;
     public Car_PlayerMovement car;
     public float width = 0.2f;
-    public float minSmokeAlpha = 0.0f;
     public float maxSmokeAlpha = 0.6f;
 
     void FixedUpdate() {
@@ -25,13 +24,11 @@ public class Car_SkidMarks : MonoBehaviour
         foreach(ParticleSystem ps in tyreSmoke) {
             if (car.IsDrifting()) {
                 ps.Play();
-                // Material mat = ps.gameObject.GetComponent<ParticleSystemRenderer>().material;
-                // Color color = mat.color;
-                // float a = Mathf.Max(Mathf.Min(1, (car.GetDriftAngle() / 90)), 0);
-                // a = a * (maxSmokeAlpha - minSmokeAlpha) + minSmokeAlpha;
-                // color.a = a;
-                // Debug.Log(a);
-                // mat.color = color;
+                Material mat = ps.gameObject.GetComponent<ParticleSystemRenderer>().material;
+                Color color = mat.color;
+                float a = (car.GetDriftAngle() / 90) * maxSmokeAlpha;
+                color.a = Mathf.Min(a * a, maxSmokeAlpha);
+                mat.color = color;
             } else {
                 ps.Stop();
             }

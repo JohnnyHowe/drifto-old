@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Car
+{
     [RequireComponent(typeof(Car_PlayerMovement))]
     public class Car_Gravity : MonoBehaviour
     {
@@ -26,3 +28,4 @@ using UnityEngine;
             _rb.velocity += direction * acceleration * Time.fixedDeltaTime;
         }
     }
+}
