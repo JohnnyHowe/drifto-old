@@ -276,6 +276,19 @@ PrefabInstance:
       propertyPath: trackController
       value: 
       objectReference: {fileID: 1813422224}
+    - target: {fileID: 1564115331, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: maxSmokeAlpha
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564115331, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
+      propertyPath: minSmokeAlpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591781278929761053, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367138, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
       propertyPath: maxVisualSteeringAngle
@@ -340,6 +353,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 5672844065709072945, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5672844065709072945, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: outlineMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
