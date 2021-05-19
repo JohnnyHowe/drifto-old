@@ -25,13 +25,12 @@ public class Car_SkidMarks : MonoBehaviour
         foreach(ParticleSystem ps in tyreSmoke) {
             if (car.IsDrifting()) {
                 ps.Play();
-                // Material mat = ps.gameObject.GetComponent<ParticleSystemRenderer>().material;
-                // Color color = mat.color;
-                // float a = Mathf.Max(Mathf.Min(1, (car.GetDriftAngle() / 90)), 0);
-                // a = a * (maxSmokeAlpha - minSmokeAlpha) + minSmokeAlpha;
-                // color.a = a;
-                // Debug.Log(a);
-                // mat.color = color;
+                Material mat = ps.gameObject.GetComponent<ParticleSystemRenderer>().material;
+                Color color = mat.color;
+                float a = Mathf.Max(Mathf.Min(1, (car.GetDriftAngle() / 90)), 0);
+                a = a * (maxSmokeAlpha - minSmokeAlpha) + minSmokeAlpha;
+                color.a = a;
+                mat.color = color;
             } else {
                 ps.Stop();
             }
