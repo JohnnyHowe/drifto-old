@@ -265,6 +265,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 9.3, y: 0, z: 0}
+--- !u!1 &609293294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7116809235705542787, guid: f15b3a727422cb54fb704aa1e97d4f05,
+    type: 3}
+  m_PrefabInstance: {fileID: 1240025624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &609293295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609293294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8069b943ddc7f174e9fb65c57dd94d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackController: {fileID: 1813422224}
 --- !u!1 &1221510831
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +346,11 @@ PrefabInstance:
     - target: {fileID: 1564115331, guid: f15b3a727422cb54fb704aa1e97d4f05, type: 3}
       propertyPath: minSmokeAlpha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692169768400158202, guid: f15b3a727422cb54fb704aa1e97d4f05,
+        type: 3}
+      propertyPath: outlineMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441285345956367143, guid: f15b3a727422cb54fb704aa1e97d4f05,
         type: 3}
