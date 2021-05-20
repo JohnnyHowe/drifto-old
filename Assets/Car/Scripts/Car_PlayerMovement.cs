@@ -24,6 +24,7 @@ public class Car_PlayerMovement : MonoBehaviour
     public List<Transform> driveWheels;
     private Rigidbody _rb;
     public float driftAngleThreshold = 10.0f;
+    public float straighteningStrength = 0.5f;
 
     void Start()
     {
@@ -38,25 +39,45 @@ public class Car_PlayerMovement : MonoBehaviour
         PointDriveWheelsAt(wheelAngle);
     }
 
-    private float GetRawDriftAngle() {
-        if (! WheelsGrounded()) return 0;
+    private float GetRawDriftAngle()
+    {
+        if (!WheelsGrounded()) return 0;
         return Vector3.Angle(_rb.velocity.normalized, GetDriveDirection()) * Vector3.Cross(_rb.velocity.normalized, GetDriveDirection()).y;
     }
 
-    public float GetDriftAngle() {
+    public float GetDriftAngle()
+    {
         return GetRawDriftAngle();
-    } 
+    }
 
-    public bool IsFrontWheelDrift() {
+    public bool IsFrontWheelDrift()
+    {
         return Mathf.Abs(GetDriftAngle()) > maxVisualSteeringAngle;
     }
 
-    public bool IsDrifting() {
+    public bool IsDrifting()
+    {
         return Mathf.Abs(GetDriftAngle()) > driftAngleThreshold;
     }
 
     void FixedUpdate()
     {
+        // turn in travel direction
+        if (Mathf.Abs(TouchInput.centeredScreenPosition.x) < 0.2f)
+        {
+            if (Mathf.Abs(GetRawDriftAngle()) < 2)
+            {
+                float s = -GetRawDriftAngle() * straighteningStrength * 50;
+                _rb.angularVelocity += transform.up * s;
+            }
+            else
+            {
+                float t = (90 - Mathf.Abs(GetRawDriftAngle()));
+                float s = -Mathf.Sign(GetRawDriftAngle()) * straighteningStrength * t;
+                _rb.angularVelocity += transform.up * s;
+            }
+        }
+
         // Body
         _rb.centerOfMass = centerOfMass.localPosition;  // Doing each frame allows it to be changed in inspector
         _rb.AddForce(-GetDragForce() * _rb.velocity.normalized);

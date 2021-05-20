@@ -674,12 +674,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129717188692647672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 10
   precomputeOutline: 0
@@ -8034,7 +8034,8 @@ MonoBehaviour:
   driveWheels:
   - {fileID: 4291603392742644554}
   - {fileID: 3937599153982319735}
-  driftAngleThreshold: 3
+  driftAngleThreshold: 10
+  straighteningStrength: 0.01
 --- !u!114 &102049933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8127,7 +8128,7 @@ MonoBehaviour:
   car: {fileID: 5441285345956367138}
   width: 0.2
   minSmokeAlpha: 0
-  maxSmokeAlpha: 0.5
+  maxSmokeAlpha: 0
 --- !u!1 &5484083960885980449
 GameObject:
   m_ObjectHideFlags: 0
@@ -8186,7 +8187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 10
   precomputeOutline: 0
@@ -13534,13 +13535,14 @@ GameObject:
   m_Component:
   - component: {fileID: 778138167476109764}
   - component: {fileID: 3761676665233102119}
+  - component: {fileID: 609293295}
   m_Layer: 8
   m_Name: TrackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &778138167476109764
 Transform:
   m_ObjectHideFlags: 0
@@ -13568,6 +13570,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &609293295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116809235705542787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8069b943ddc7f174e9fb65c57dd94d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackController: {fileID: 0}
 --- !u!1 &7118962507289182291
 GameObject:
   m_ObjectHideFlags: 0
